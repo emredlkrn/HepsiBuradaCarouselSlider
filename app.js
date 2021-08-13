@@ -1,43 +1,66 @@
 
+let index = 1;
+disp(index);
 
-//variable that I've used in indexing the images and the other variables such as circles in the navbar
-let num = 1;
+// Next/previous controls
 
-function right() //function that enables us to move towards right
+/*logic:
+in HTML codes, next button defines the variable 'n' as '1' and it adds 1 to index,
+in same manner, prev button defines n as '-1' and it diminishes the variable 'n' as 1
+
+the function 'move' adds the n to index to be able to move towards desired way
+*/
+function move(n) 
 {
-    if (num !=6) //if the index is not 6, it triggers call-back func. 'swap' 
-    {
-        num +=1; //index variale incremented one (the logic is numerical axis)
-        swap(num, -1); //due to inner property of the function 'swap', there should be an additional number to balance the img that needs to be displayed
-        //because the real index has been incremented by one 
-
-    }
-    else
-    {
-        num = 1;
-        swap(num, +5);
-    }
+  disp(index += n);
 }
 
-function left() //the same logic works in here as well as the function 'right'
+// small image controls
+function currentSlide(n) 
 {
-    if(num != 1)
-    {
-        num -=1;
-        swap(num, +1);
-    }
-    else
-    {
-        num = 6;
-        swap(num,-5);
-
-    }
+  disp(index = n);
 }
 
-function swap(value,cnt) //swap function's logic :  it displays the correct image while making others transparent (it works for circles too)
+
+function disp(n) 
 {
-    document.getElementById(`img${value + cnt}`).style.opacity = '0';
-    document.getElementById(`img${value}`).style.opacity = '1';
-    document.getElementById(`circle${value+ cnt}`).style.background = 'transparent';
-    document.getElementById(`circle${value}`).style.background = 'white';
+    let i;
+    let slides = document.getElementsByClassName("slides"); //images (not the small ones)
+    let dots = document.getElementsByClassName("demo"); //small images on the navbar
+    
+    console.log(dots.length)
+
+    
+    if (n > slides.length) //if the index that will be displayed exceeds the number 6 (because there are 6 pictures), it turns back
+    {
+        index = 1
+    }
+    if (n < 1) //if it fells below the starting index, it goes to the end. This mechanism creates a loop
+    {
+        index = slides.length
+    }
+
+
+
+    for (i = 0; i < slides.length; i++) 
+    {
+        slides[i].style.display = "none"; //hiding the other elements that are not displaying
+    }
+
+
+
+    for (i = 0; i < dots.length; i++) 
+    {
+        dots[i].className = dots[i].className.replace("active",""); //making brighter the current slide's small image on the navbar
+    }
+
+
+
+    slides[index-1].style.display = "block";
+    dots[index-1].className += " active";
+    
+
+
+
 }
+

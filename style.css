@@ -1,76 +1,91 @@
 *{
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
-
-}
-
-body
+    box-sizing: content-box;
+  }
+  
+/*adjusting the div container*/
+.container 
 {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    
+    position: absolute; 
+	left: 50%;
+    right: 60%;
+	top: 80%;
+	transform: scale(0.9) translate(-50%, -100%);
+	border: 5mm rgba(17, 128, 219, 0.8);
+	border-style: groove;
+	width: 770px;
+    
 }
-.slider
+  
+/*hiding the rest, showing the current image*/
+.slides 
 {
-    position: relative;
-    display: flex;
-    width: 600px;
-    height: 380px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 0 25px rgba(0,0,0, .8);
+  display: none;
 }
-.slider img
+  
+/* when the cursor rides over the small images (hovering) cursor turns into 'pointer' */
+.cursor 
 {
-    position: absolute;
-    width: 600px;
-    height: 380px;
-    transition: all .6s;
+    cursor: pointer;
 }
-
-#img1{ opacity: 1;}
-#img2{ opacity: 0;}
-#img3{ opacity: 0;}
-#img4{opacity: 0;}
-#img5{opacity: 0;}
-#img6{opacity: 0;}
-
-
-.fas
+  
+/* next & previous buttons */
+.prev, .next 
 {
     cursor: pointer;
     position: absolute;
-    color: grey;
-    z-index: 1;
-    top: 50%;
-    transform: scale(2.6);
-    transition: 0.2s;
+    top: 55%;
+    width: 2.6%;
+    padding: 5px;
+    margin-top: -50px;
+    color: rgb(245, 147, 0);
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 100px;
+    user-select: auto;
+    
+}
+  
+/* positioning the next & prev buttons */
+.next 
+{
+    right: 2%;
+    border-radius: 100px;
 }
 
-.fas:hover{color : #ffffff;}
-.fa-chevron-left{left: 30px;}
-.fa-chevron-right{right: 30px;}
-.circle
+.prev
 {
-    position: absolute;
-    bottom: 10px;
-    width: 15px;
-    height: 15px;
-    border: 2.5px solid white;
-    border-radius: 50%;
-    z-index: 1;
-    transition: 0.2s;
+    left: 2%;
 }
-#circle1
+  
+  
+/*while hovering, if the cursor comes on the next&prev btns. background image will be blue */
+.prev:hover,
+.next:hover 
 {
-    left: 37%;
-    background: white;
+    background-color: rgba(17, 128, 219, 0.8);
 }
-#circle2{left: 42%;}
-#circle3{left: 47%;}
-#circle4{left: 52%;}
-#circle5{left: 57%;}
-#circle6{left: 62%;}
+  
 
+/* adjusting the 9 small pictures in navbar */
+.sm_img 
+{
+    display: flex;
+    float: left;
+    width: 78px;
+	height: 55px;
+    border: 1mm groove rgba(17, 128, 219, 0.8);
+}
+  
+/* adjusting the opacity of the small images to be able to give them 
+transparency effect */
+.demo 
+{
+    opacity: 0.4;
+}
+  
+.active,
+.demo:hover /* if cursor comes on any small image on navbar, the image will be clearly visible*/
+{
+    opacity: 1;
+}

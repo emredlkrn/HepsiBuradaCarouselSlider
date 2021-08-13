@@ -4,32 +4,114 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type = "text/css" href="style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <title>Tesodev_FE</title>
+    <title>Tesodev_FE_Slider</title>
 </head>
 <body>
-    <div class = "slider">
+    <!-- container for the all images (full & small sized)-->
+    <div class = "container">
+
+        <!--full sized images to display-->
+
+        <div class="slides">
+            
+              <img src="https://images.hepsiburada.net/banners/s/0/672-378/bannerImage2109_20210807234306.jpeg/format:webp" style = "width: 100%" >
+        </div>
         
-        <img src="https://images.hepsiburada.net/banners/s/0/672-378/bannerImage2120_20210810134228.png/format:webp" id="img1">
-        <img src="https://images.hepsiburada.net/banners/s/0/672-378/bannerImage2109_20210714133919.png/format:webp" id="img2">
-        <img src="https://images.hepsiburada.net/banners/s/0/672-378/bannerImage2119_20210702112059.jpeg/format:webp" id="img3">
-        <img src="https://images.hepsiburada.net/banners/s/0/672-378/bannerImage2127_20210728140305.png/format:webp" id="img4">
-        <img src="https://images.hepsiburada.net/banners/s/0/672-378/bannerImage2099_20210730172425.png/format:webp" id="img5">
-        <img src="https://images.hepsiburada.net/banners/s/0/672-378/bannerImage2109_20210807234306.jpeg/format:webp" id="img6">
+        <div class="slides">
+            
+              <img src="https://images.hepsiburada.net/banners/s/0/672-378/bannerImage2120_20210810134228.png/format:webp" style="width:100%">
+        </div>
+        
+        <div class="slides">
+            
+              <img src="https://images.hepsiburada.net/banners/s/0/672-378/bannerImage2109_20210714133919.png/format:webp" style="width:100%">
+        </div>
+        
+        <div class="slides">
+            
+              <img src="https://images.hepsiburada.net/banners/s/0/672-378/bannerImage2119_20210702112059.jpeg/format:webp" style="width:100%">
+        </div>
+        
+        <div class="slides">
+           
+              <img src="https://images.hepsiburada.net/banners/s/0/672-378/bannerImage2127_20210728140305.png/format:webp" style="width:100%">
+        </div>
+        
+        <div class="slides">
+            
+              <img src="https://images.hepsiburada.net/banners/s/0/672-378/bannerImage2099_20210730172425.png/format:webp" style="width:100%">
+        </div>
 
-        <!-- I had used arrow models from FontAwesome website and used onclick property of HTML to embed them-->
-        <span class = "fas fa-chevron-left" onclick = "left()"></span>
-        <span class = "fas fa-chevron-right" onclick = "right()"></span>
+        <div class="slides">
+            
+            <img src="https://images.hepsiburada.net/banners/s/0/672-378/bannerImage2165_20210811155953.jpeg/format:webp" style="width:100%">
+        </div>
 
-        <span class = "circle" id = "circle1"></span>
-        <span class = "circle" id = "circle2"></span>
-        <span class = "circle" id = "circle3"></span>
-        <span class = "circle" id = "circle4"></span>
-        <span class = "circle" id = "circle5"></span>
-        <span class = "circle" id = "circle6"></span>
+        <div class="slides">
+            
+            <img src="https://images.hepsiburada.net/banners/s/0/672-378/bannerImage2112_20210615103438.png/format:webp" style="width:100%">
+        </div>
+
+        <div class="slides">
+            
+            <img src="https://images.hepsiburada.net/banners/s/0/672-378/bannerImage2112_20210528203839.png/format:webp" style="width:100%">
+        </div>
+
+
+
+        <!-- I've took the button classes from w3School page -->
+        <a class="prev" onclick="move(-1)">&#10094;</a>
+        <a class="next" onclick="move(1)">&#10095;</a>
+
+        <!-- small sized images-->
+
+        <div class = "smalls">
+
+            <div class = "sm_img">
+                <img class = "demo cursor" src="https://images.hepsiburada.net/banners/s/0/71-40/bannerImage2109_20210807234306.jpeg/format:webp" style = "width: 150%" onclick = "currentSlide(1)" alt="">
+            </div>
+
+            <div class = "sm_img">
+                <img class = "demo cursor" src="https://images.hepsiburada.net/banners/s/0/71-40/bannerImage2120_20210810134228.png/format:webp" onclick = "currentSlide(2)" alt="">
+            </div>
+
+            <div class = "sm_img">
+                <img class = "demo cursor" src="https://images.hepsiburada.net/banners/s/0/71-40/bannerImage2109_20210714133919.png/format:webp" onclick = "currentSlide(3)" alt="">
+            </div>
+
+            <div class = "sm_img">
+                <img class = "demo cursor" src="https://images.hepsiburada.net/banners/s/0/71-40/bannerImage2119_20210702112059.jpeg/format:webp" onclick = "currentSlide(4)" alt="">
+            </div>
+
+            <div class = "sm_img">
+                <img class = "demo cursor" src="https://images.hepsiburada.net/banners/s/0/71-40/bannerImage2127_20210728140305.png/format:webp" onclick = "currentSlide(5)" alt="">
+            </div>
+
+            <div class = "sm_img">
+                <img class = "demo cursor" src="https://images.hepsiburada.net/banners/s/0/71-40/bannerImage2099_20210730172425.png/format:webp" onclick = "currentSlide(6)"  alt="">
+            </div>
+
+            <div class = "sm_img">
+                <img class = "demo cursor" src="https://images.hepsiburada.net/banners/s/0/71-40/thumbnailImage2158_20210811155944.jpeg/format:webp" onclick = "currentSlide(7)"  alt="">
+            </div>
+
+            <div class = "sm_img">
+                <img class = "demo cursor" src="https://images.hepsiburada.net/banners/s/0/71-40/thumbnailImage2105_20210615103418.png/format:webp" onclick = "currentSlide(8)"  alt="">
+            </div>
+
+            <div class = "sm_img">
+                <img class = "demo cursor" src="https://images.hepsiburada.net/banners/s/0/71-40/thumbnailImage2149_20210528084903.png/format:webp" onclick = "currentSlide(9)"  alt="">
+            </div>
+
+
+        </div>
+
+
 
     </div>
-    <script src="app.js"></script>
+
+    <script src = "app.js"></script>
 </body>
 </html>
